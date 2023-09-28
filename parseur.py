@@ -77,6 +77,15 @@ def start_parentheses_index(expr_list):
         return len(expr_list) - 1 - reversed_list.index("(")  # Renvoie l'index de la parenthèse ouverte dans la liste d'origine
     else:
         return -1  # Aucune parenthèse ouverte n'a été trouvée
+def end_parentheses_index(expr_list):
+    """
+    :param expr_list:
+    :return:
+    """
+    if ")" in expr_list:
+        return expr_list.index(")") # Renvoie l'index de la parenthèse ouverte dans la liste d'origine
+    else:
+        return -1  # Aucune parenthèse ouverte n'a été trouvée
 def start_exposant_index(expr_list):
     if "^" in expr_list:
         return expr_list.index("^")   # Renvoie l'index du nombre après l'exposant

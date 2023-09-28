@@ -12,7 +12,7 @@ def simp_parenthesis(index_start, express_list):
     equa_list = []
 
     if index_start != -1:
-        #print("Oui, il y a une parenthèse")
+        # print("Oui, il y a une parenthèse")
         count_open_parentheses = 1  # Compteur pour suivre les parenthèses ouvertes
         while count_open_parentheses > 0:
             index_start += 1
@@ -22,7 +22,7 @@ def simp_parenthesis(index_start, express_list):
                 count_open_parentheses -= 1
             if count_open_parentheses > 0:
                 equa_list.append(express_list[index_start])
-        #print("Équation à l'intérieur des parenthèses :", equa_list)
+        # print("Équation à l'intérieur des parenthèses :", equa_list)
     return equa_list
 
 def res_equation(equation_list):
@@ -34,6 +34,7 @@ def res_equation(equation_list):
     Larepo = equation_list
 
     while len(Larepo) > 1:
+        print("ok")
         operateur_multi = parseur.check_multiplication(Larepo)
         operateur_div = parseur.check_division(Larepo)
         operateur_add = parseur.check_addition(Larepo)
@@ -41,8 +42,8 @@ def res_equation(equation_list):
             while operateur_multi == 3:
                 start_index = parseur.start_multiplication_index(Larepo)
                 if start_index - 1 >= 0 and start_index + 1 < len(equation_list):
-                    entier1 = int(equation_list[start_index - 1])
-                    entier2 = int(equation_list[start_index + 1])
+                    entier1 = float(equation_list[start_index - 1])
+                    entier2 = float(equation_list[start_index + 1])
                     reponse = entier1 * entier2
                     Larepo = modifier_liste(Larepo, parseur.start_multiplication_index(equation_list), str(reponse))
                     operateur_multi = parseur.check_multiplication(Larepo)
@@ -50,8 +51,8 @@ def res_equation(equation_list):
             while operateur_div == 4:
                 start_index = parseur.start_division_index(Larepo)
                 if start_index - 1 >= 0 and start_index + 1 < len(equation_list):
-                    entier1 = int(equation_list[start_index - 1])
-                    entier2 = int(equation_list[start_index + 1])
+                    entier1 = float(equation_list[start_index - 1])
+                    entier2 = float(equation_list[start_index + 1])
                     reponse = entier1 / entier2
                     Larepo = modifier_liste(Larepo, parseur.start_division_index(Larepo), str(reponse))
                     operateur_div = parseur.check_division(Larepo)
@@ -59,8 +60,8 @@ def res_equation(equation_list):
             while operateur_add == 5:
                 start_index = parseur.start_addition_index(Larepo)
                 if start_index - 1 >= 0 and start_index + 1 < len(equation_list):
-                    entier1 = int(equation_list[start_index - 1])
-                    entier2 = int(equation_list[start_index + 1])
+                    entier1 = float(equation_list[start_index - 1])
+                    entier2 = float(equation_list[start_index + 1])
                     reponse = entier1 + entier2
                     Larepo = modifier_liste(Larepo, parseur.start_addition_index(Larepo), str(reponse))
                     operateur_add = parseur.check_addition(Larepo)
