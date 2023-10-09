@@ -1,0 +1,8 @@
+
+
+-bug correction during compilation
+-create function how throw number after float, like "1.055544"  will become "1.05"
+-doc your code
+-verify and supp some useless functions
+-add some tests to see quel equation we can't do
+-add soustract function, exposant

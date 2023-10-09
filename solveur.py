@@ -71,10 +71,11 @@ def res_equation(equation_list):
 
 def modifier_liste(liste, index, nombre):
     """
-    :param liste: l'equation simplifier sans parenthese
-    :param index: l'nedoit ou se trouve l'operateur
-    :param nombre: la reponse
-    :return: la nouvelle equation sans l'operation
+    Modifie l'equation en fonction de son étape
+    :param liste: est l'equation simplifier sans parenthese
+    :param index: l'endroit ou se trouve l'operateur
+    :param nombre: la reponse qu resoit la methodes "res_equation"
+    :return: une nouvelle equation sans l'operation qui
     """
     list = liste
     if index >= 1 and index + 1 < len(list):

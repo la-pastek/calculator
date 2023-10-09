@@ -16,12 +16,16 @@ def replace(input_list, index1, index2, reponse):
     :param replacement_number: reponse
     :return:
     """
-    new_list =list()
+    new_list = list()
     if index1 < 0 or index2 < 0 or index1 >= len(input_list) or index2 >= len(input_list):
         raise IndexError("Indices hors de la plage valide")
 
     for i in range(index1):
         new_list.append(input_list[i])
     new_list.append(reponse[0]) # il ne faut pas oublier de rajouter la fin de l'equation
+    j = index2+1
+    while j < len(input_list):
 
+        new_list.append(input_list[j])
+        j = j+1
     return new_list
